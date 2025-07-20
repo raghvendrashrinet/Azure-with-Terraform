@@ -28,8 +28,8 @@ This repository contains hands-on examples, reusable templates, best practices, 
 
 ### Clone This Repo
 ```bash
-git clone https://github.com/yourusername/azure-terraform-kb.git
-cd azure-terraform-kb
+git clone https://github.com/raghvendrashrinet/Azure-with-Terraform.git
+cd Azure-with-Terraform
 
 🎯 Goals
 
