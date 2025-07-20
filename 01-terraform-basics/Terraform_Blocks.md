@@ -22,30 +22,38 @@ block_type "label1" "label2" {
     ...
   }
 }
+```
 
-
-
-Example:
+> Example:
+```hcl
 resource "azurerm_resource_group" "example" {
   name     = "my-rg"
   location = "East US"
 }
+```
 
+---
 
+## 🗂️ Common Types of Blocks in Terraform
 
-🗂️ Common Types of Blocks in Terraform
-Block Type	Description
-terraform	Project-level settings like required providers and backend config.
-provider	Defines how Terraform connects to external APIs (e.g., Azure, AWS).
-resource	Describes infrastructure to be created (e.g., VMs, Storage Accounts).
-variable	Declares input parameters to make the config dynamic.
-output	Defines values to be displayed after deployment (e.g., IP addresses).
-module	Reuses and organizes code by referencing external or local modules.
-locals	Declares local values (constants or expressions).
-data	Reads existing resources without creating them (read-only access).
-🔍 Example of Each Block
-1. terraform block
+| Block Type         | Description |
+|--------------------|-------------|
+| `terraform`        | Project-level settings like required providers and backend config. |
+| `provider`         | Defines how Terraform connects to external APIs (e.g., Azure, AWS). |
+| `resource`         | Describes infrastructure to be created (e.g., VMs, Storage Accounts). |
+| `variable`         | Declares input parameters to make the config dynamic. |
+| `output`           | Defines values to be displayed after deployment (e.g., IP addresses). |
+| `module`           | Reuses and organizes code by referencing external or local modules. |
+| `locals`           | Declares local values (constants or expressions). |
+| `data`             | Reads existing resources without creating them (read-only access). |
 
+---
+
+## 🔍 Example of Each Block
+
+### 1. `terraform` block
+
+```hcl
 terraform {
   required_providers {
     azurerm = {
@@ -54,55 +62,85 @@ terraform {
     }
   }
 }
+```
 
-2. provider block
+---
 
+### 2. `provider` block
+
+```hcl
 provider "azurerm" {
   features {}
 }
+```
 
-3. resource block
+---
 
+### 3. `resource` block
+
+```hcl
 resource "azurerm_resource_group" "main" {
   name     = "demo-rg"
   location = "East US"
 }
+```
 
-4. variable block
+---
 
+### 4. `variable` block
+
+```hcl
 variable "location" {
   type    = string
   default = "East US"
 }
+```
 
-5. output block
+---
 
+### 5. `output` block
+
+```hcl
 output "rg_name" {
   value = azurerm_resource_group.main.name
 }
+```
 
-6. locals block
+---
 
+### 6. `locals` block
+
+```hcl
 locals {
   rg_name = "my-local-rg"
 }
+```
 
-7. data block
+---
 
+### 7. `data` block
+
+```hcl
 data "azurerm_client_config" "current" {}
+```
 
-8. module block
+---
 
+### 8. `module` block
+
+```hcl
 module "network" {
   source    = "./modules/network"
   vnet_name = "demo-vnet"
 }
+```
 
-🧠 Summary
+---
 
-    Terraform configurations are composed of blocks.
+## 🧠 Summary
 
-    Each block type has a specific purpose (defining infra, logic, settings).
+- Terraform configurations are composed of **blocks**.
+- Each **block type** has a specific purpose (defining infra, logic, settings).
+- Mastering block structure and usage is essential for writing scalable, reusable infrastructure code.
 
-    Mastering block structure and usage is essential for writing scalable, reusable infrastructure code.
-
+---
