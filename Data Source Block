@@ -2,3 +2,17 @@
 Uderstanding by Example :  Suppose you want to deploy a VM into and already existing RG-VNET-Subnet
 
 ![Alt text](./DataBlock Example.png)
+'''
+data "azurerm_resource_group" "rgdata" {
+    name = "rg1"
+}
+
+data "azurerm_virtual_network" "vnetdata" {
+    name = "vnet1"  # actual resource name in cloud 
+    resource_group_name = data.azurerm_resource_group.rgdata.name 
+}
+
+output "vnet_id" {
+    value = data.azurerm_virtual_network.vnetdata.id
+}
+'''
