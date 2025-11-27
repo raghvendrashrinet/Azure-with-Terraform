@@ -34,7 +34,7 @@ Internet
 Resource Group (rg)
 ```
 
-## Note : When you attach a NAT Gateway to a subnet, you do NOT need to explicitly add outbound allow rules in the NSG to the NAT Gateway IP.
+### Note : When you attach a NAT Gateway to a subnet, you do NOT need to explicitly add outbound allow rules in the NSG to the NAT Gateway IP.
 
 - The NAT Gateway is responsible for outbound translation and routing, but outbound traffic from the VMs to the internet passes through the subnet NAT Gateway without having to modify NSG outbound rules.
 - NOT need a UDR (User Defined Route) for NAT Gateway outbound traffic.  Route 0.0.0.0/0 → NAT Gateway Public IP is AUTO-ADDED
