@@ -1,6 +1,6 @@
 # Terraform Resource Flow
 
-
+``` 
 Internet
     |
     | Public IP (LB Frontend)
@@ -32,3 +32,4 @@ Internet
          ^
          |
 Resource Group (rg)
+``` 
